@@ -1,0 +1,28 @@
+package main;
+/**
+ * @author LuciaLM
+ * @version 1.0
+ */
+public class Act1_11 {
+	public static void main(String[] args) {
+		ProcessBuilder pb;
+		Process process;
+		int exitVal;
+		try {
+			pb = new ProcessBuilder();
+			pb.directory(new File("/home/usuario/git/ProgSerPro/ProgSerPro/bin"));
+			pb.command("java", "psp.temauno.actividades.DameParam", "Hola!");
+			process = pb.start();
+			
+			exitVal = process.waitFor();			
+			System.out.println("Llamada con un parámetro: " + exitVal);
+			
+			pb.command("java", "psp.temauno.actividades.DameParam");
+			process = pb.start();			
+			exitVal = process.waitFor();			
+			System.out.println("Llamada sin parámetros: " + exitVal);			
+		} catch (IOException | InterruptedException e) {			
+			e.printStackTrace();
+		}
+	}
+}

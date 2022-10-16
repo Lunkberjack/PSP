@@ -1,0 +1,17 @@
+package main;
+
+public class Act1_11_dame {
+	public static void main(String[] args) {
+		// Si se llama sin parámetros se devuelve el código de error 1
+		if(args.length == 0)
+			System.exit(1);
+		// Si se llama con un parámetro (String), se devuelve 2
+		else if(args.length == 1 && args[0] instanceof String)
+			System.exit(2);
+		// Si se llama con un parámetro int < 0, se devuelve 3
+		else if(args.length == 1 && (Integer.valueOf(args[0]) < 0))
+			System.exit(3);
+		else
+			System.exit(0);
+	}
+}
