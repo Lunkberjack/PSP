@@ -1,0 +1,33 @@
+package main.act1_12;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Act1_12_pasa {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		ProcessBuilder pb;
+		Process process;
+		int exitVal;
+		try {
+			pb = new ProcessBuilder();
+			pb.directory(new File("/home/lucia/PSP/JavaProcesos/bin"));
+			// Llama al otro programa con un parámetro tipo cadena:
+			pb.command("java", "main.act1_12.Act1_12_dame", "Hola yo soy la cadena \\uD83D");
+			process = pb.start();
+			exitVal = process.waitFor();			
+			System.out.println("Llamada con un parámetro tipo cadena: " + exitVal);
+			// Llama al otro programa sin parámetros:
+			pb.command("java", "main.act1_12.Act1_12_dame");
+			process = pb.start();
+			exitVal = process.waitFor();			
+			System.out.println("Llamada sin parámetros: " + exitVal);
+			
+		} catch (IOException e) {			
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+}
