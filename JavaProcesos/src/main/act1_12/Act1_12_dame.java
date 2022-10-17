@@ -1,6 +1,7 @@
 package main.act1_12;
+
 /**
- * @author lucia
+ * @author LuciaLM
  * @version 1.0
  */
 public class Act1_12_dame {
