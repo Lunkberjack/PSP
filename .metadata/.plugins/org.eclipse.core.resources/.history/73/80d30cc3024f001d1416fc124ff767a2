@@ -1,0 +1,27 @@
+package main.act1_14;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RecibeFicheros {
+	public static void main(String[] args) {
+		int contador = 0;
+		String texto = "Hola aha ehe ihi chja cja cja jakch hola hola hola aha aha aha";
+		Pattern pat = Pattern.compile("h", Pattern.CASE_INSENSITIVE);
+		Pattern no = Pattern.compile("ch", Pattern.CASE_INSENSITIVE);
+		Pattern no2 = Pattern.compile("^(\\s|^)h", Pattern.CASE_INSENSITIVE);
+		Matcher mat = pat.matcher(texto);
+		Matcher noMat = no.matcher(texto);
+		Matcher noMat2 = no2.matcher(texto);
+		while(mat.find()) {
+			contador++;
+		}
+		while(noMat.find()) {
+			contador--;
+		}
+		while(noMat2.find()) {
+			contador--;
+		}
+		System.out.println(contador);
+	}
+}
