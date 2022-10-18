@@ -1,2 +1,4 @@
+darkestApplied=true
 eclipse.preferences.version=1
-themeid=io.github.pyvesb.eclipse_planet_themes.pluto.dark
+enableddarkestdark=true
+themeid=com.genuitec.eclipse.themes.dark

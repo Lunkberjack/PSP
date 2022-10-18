@@ -1,4 +1,0 @@
-línea=1tamaño=;7;espacios=0
-línea=2tamaño=;7;espacios=0
-línea=3tamaño=;5;espacios=0
-línea=4tamaño=;1;espacios=0

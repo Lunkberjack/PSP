@@ -1,0 +1,2 @@
+La palabra ola no es palíndroma.
+La palabra ser no es palíndroma.
