@@ -1,4 +1,6 @@
 La palabra ala es palíndroma.
-La palabra somos es palíndroma.
 La palabra seres es palíndroma.
+La palabra ana es palíndroma.
+La palabra somos es palíndroma.
+La palabra sometemos es palíndroma.
 La palabra 0 es palíndroma.

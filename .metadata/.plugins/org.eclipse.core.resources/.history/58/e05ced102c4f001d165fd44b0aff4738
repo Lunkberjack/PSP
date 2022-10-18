@@ -5,13 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
-/**
- * Clase que pide una palabra palíndroma, la envía al programa
- * RecibeFicheros y maneja las redirecciones de entrada y salida
- * estándar.
- * @author LuciaLM
- * @version 1.0
- */
+
 public class PasaFicheros {
 	public static void main(String[] args) {
 		int exitVal = 0;
@@ -51,10 +45,27 @@ public class PasaFicheros {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		// Se muestra el valor devuelto por la operación y se sale con él:
 		System.out.println("Terminado con valor:" + exitVal);
 		System.exit(exitVal);
+	}
+	/**
+	 * Una palabra es palíndroma si se lee de igual manera hacia izquierda
+	 * y derecha (ANA, SOMOS, SAAS)
+	 * @param pal
+	 * @return
+	 */
+	public static boolean esPalindroma(String pal) {
+		boolean res = false;
+		// StringBuilder para que sea más sencillo invertirla:
+		StringBuilder aux = new StringBuilder(pal);
+		// Conversión a String para poder usar equals():
+		if(String.valueOf(aux.reverse()).equals(pal)) {
+			res = true;
+		}
+		return res;
 	}
 }

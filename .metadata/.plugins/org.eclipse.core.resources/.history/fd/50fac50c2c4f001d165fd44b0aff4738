@@ -4,13 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Contiene la lógica para saber si una palabra es palíndroma,
- * y escribe en el Stream de salida o error dependiendo de si la
- * cadena pasada por parámetro desde PasaFicheros lo es o no.
- * @author LuciaLM
- * @version 1.0
- */
 public class RecibeFicheros {
 	public static void main(String[] args) {
 		// Obtención de un lector a partir del flujo de entrada

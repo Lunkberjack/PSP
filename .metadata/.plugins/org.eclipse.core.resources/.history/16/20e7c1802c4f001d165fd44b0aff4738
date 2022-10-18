@@ -51,6 +51,7 @@ public class PasaFicheros {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		// Se muestra el valor devuelto por la operación y se sale con él:

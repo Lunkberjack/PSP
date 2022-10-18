@@ -6,9 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 /**
- * Clase que pide una palabra palíndroma, la envía al programa
- * RecibeFicheros y maneja las redirecciones de entrada y salida
- * estándar.
+ * Clase que contiene
  * @author LuciaLM
  * @version 1.0
  */
@@ -51,6 +49,7 @@ public class PasaFicheros {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		// Se muestra el valor devuelto por la operación y se sale con él:
