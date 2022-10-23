@@ -1,0 +1,16 @@
+package main.act1_15;
+
+public class Hilo implements Runnable {
+	private String msg;
+	private boolean activado;
+
+	public Hilo(String msg) {
+		this.msg = msg;
+		this.activado = true;
+	}
+
+	@Override
+	public void run() {
+			System.out.println(msg);
+	}
+}

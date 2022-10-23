@@ -1,0 +1,30 @@
+package main.act1_15;
+
+public class Hilo implements Runnable {
+	private Thread hilo;
+	private String msg;
+	private boolean activado;
+
+	public Hilo(String msg) {
+		this.msg = msg;
+		this.hilo = new Thread(this);
+		this.activado = true;
+	}
+
+	@Override
+	public void run() {
+		while(activado) {
+			System.out.println(msg);
+			try {
+				// Para dar un poco de espera entre ejecuciones
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public Thread getHilo() {
+		return this.hilo;
+	}
+}

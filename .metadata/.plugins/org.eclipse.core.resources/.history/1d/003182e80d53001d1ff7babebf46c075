@@ -1,0 +1,20 @@
+package main.act1_15;
+
+public class Main {
+	// Veces que se ejecutarán los hilos
+	public static final int REP = 5;
+
+	public static void main(String[] args) {
+		Hilo ping = new Hilo("PING");
+		Hilo pong = new Hilo("PONG");
+
+		try {
+			ping.getHilo().start();
+			Thread.sleep(2);
+			pong.getHilo().start();
+
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
+	}
+}

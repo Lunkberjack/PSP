@@ -1,0 +1,23 @@
+package main.act1_15;
+
+public class Hilo implements Runnable {
+	private static boolean turno;
+	private Thread hilo;
+	private String msg;
+	
+	public Hilo(String msg) {
+		this.msg = msg;
+		this.hilo = new Thread(this);
+	}
+
+	@Override
+	public void run() {
+		while(turno == true) {
+			System.out.println(msg);
+		}
+	}
+	
+	public Thread getHilo() {
+		return this.hilo;
+	}
+}
