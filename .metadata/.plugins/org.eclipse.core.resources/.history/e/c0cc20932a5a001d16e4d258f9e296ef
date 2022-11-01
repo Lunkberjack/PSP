@@ -1,0 +1,14 @@
+package main.act1_20;
+
+public class TiempoEjecucion {
+	private long tiempoComienzo;
+	private long tiempoEjecucion;
+	
+	
+	public long getTiempoComienzo() {
+		return this.tiempoComienzo;
+	}
+	public long getTiempoEjecucion() {
+		return System.currentTimeMillis() - this.tiempoComienzo;
+	}
+}

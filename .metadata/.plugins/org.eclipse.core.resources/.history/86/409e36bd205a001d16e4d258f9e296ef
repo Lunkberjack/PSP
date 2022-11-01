@@ -1,0 +1,11 @@
+package main.act1_20;
+
+public class Alumno {
+	private int id;
+	private int edad;
+	
+	public Alumno(int id, int edad) {
+		this.id = id;
+		this.edad = edad;
+	}
+}

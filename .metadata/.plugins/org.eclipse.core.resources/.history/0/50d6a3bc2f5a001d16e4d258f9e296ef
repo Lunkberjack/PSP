@@ -1,0 +1,34 @@
+package main.act1_20;
+
+import java.util.concurrent.ThreadLocalRandom;
+
+public class De19Anios extends TiempoEjecucion implements Runnable {
+	Alumno[] alumnos;
+	double numAlumnos;
+	
+	public De19Anios(Alumno[] alumnos) {
+		this.alumnos = alumnos;
+	}
+
+	@Override
+	public void run() {
+		this.setTiempoComienzo();
+		
+		for(Alumno x:this.alumnos) {
+			if(x.getEdad() == 19) {
+				this.numAlumnos++;
+			}
+		}
+		try {
+			// Simula un tiempo aleatorio en la ejecución
+			Thread.sleep(ThreadLocalRandom.current().nextInt(1000));
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		this.setTiempoTotalEjecucion();
+	}
+
+	public double getNumAlumnos() {
+		return numAlumnos;
+	}
+}

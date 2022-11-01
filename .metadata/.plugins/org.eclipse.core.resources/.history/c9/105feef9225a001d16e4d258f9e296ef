@@ -1,0 +1,10 @@
+package main.act1_20;
+
+public class Entre19_25 {
+	Alumno[] alumnos;
+	double numAlumnos;
+	
+	public Entre19_25(Alumno[] alumnos) {
+		this.alumnos = alumnos;
+	}
+}

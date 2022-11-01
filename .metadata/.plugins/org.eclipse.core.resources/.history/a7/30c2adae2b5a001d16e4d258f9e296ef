@@ -1,0 +1,32 @@
+package main.act1_20;
+
+import java.util.concurrent.ThreadLocalRandom;
+
+public class Mas25 extends TiempoEjecucion implements Runnable {
+	Alumno[] alumnos;
+	double numAlumnos;
+	
+	public Mas25(Alumno[] alumnos) {
+		this.alumnos = alumnos;
+	}
+
+	@Override
+	public void run() {
+		for(Alumno x:this.alumnos) {
+			if(x.getEdad() > 25) {
+				this.numAlumnos++;
+			}
+		}
+		try {
+			// Simula un tiempo aleatorio en la ejecución
+			Thread.sleep(ThreadLocalRandom.current().nextInt(1000));
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		this.setTiempoTotalEjecucion();
+	}
+
+	public double getNumAlumnos() {
+		return numAlumnos;
+	}
+}

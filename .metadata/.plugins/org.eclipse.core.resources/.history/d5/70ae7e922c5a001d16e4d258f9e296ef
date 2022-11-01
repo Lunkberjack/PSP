@@ -1,0 +1,54 @@
+package main.act1_20;
+
+import java.util.Random;
+/**
+ * Proceso de llenado de agua. Este proceso es único para cada 
+ * botella asociada. Simula el llenado de agua con volúmenes
+ * aleatorios proporcionales a la capacidad máxima de la
+ * botella
+ * @author rafa
+ * @version 1.0
+ */
+public class LlenadoAgua implements Runnable {
+	private Botella botella;
+	private long tiempoLlenado=0;
+	public static int botellasLlenas;
+	/**
+	 * Constructor especializado para el llenado de una botella concreta
+	 * @param botella Botella para llenar de agua
+	 */
+	public LlenadoAgua(Botella botella) {
+		this.botella = botella;
+	}
+	@Override
+	public void run() {
+		Random rnd = new Random();
+		long tiempoComienzoLlenado = System.currentTimeMillis();
+		while(!this.botella.estaLlena()) {
+			//simula un llenado proporcional según la capacidad de la botella
+			this.botella.llenar(rnd.nextInt(100)+ this.botella.getCapacidadMaxima()/10);
+			try {
+				//simula un tiempo aleatorio en el llenado
+				Thread.sleep(rnd.nextInt(1000));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			this.botella.setTiempoLLenado(System.currentTimeMillis() - tiempoComienzoLlenado);
+		}
+		botellasLlenas++;
+	}
+	/**
+	 * Devuelve la botella para el proceso de llenado
+	 * @return Botella para el llenado de agua
+	 */
+	public Botella getBotella() {
+		return this.botella;
+	}
+	/**
+	 * Devuelve el tiempo empleado para llenar una botella
+	 * @return Tiempo en milisegundos empleado para el llenado
+	 */
+	public long getTiempoLlenado() {
+		return this.tiempoLlenado;
+	}
+}

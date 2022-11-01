@@ -1,0 +1,9 @@
+package main.act1_20;
+
+public class TiempoEjecucion {
+	private long tiempoEjecucion;
+	
+	public long getTiempoEjecucion() {
+		return this.tiempoEjecucion;
+	}
+}

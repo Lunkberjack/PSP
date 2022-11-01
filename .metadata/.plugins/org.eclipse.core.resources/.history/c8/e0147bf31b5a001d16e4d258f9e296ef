@@ -1,0 +1,35 @@
+package psp.temauno.actividades;
+
+import java.io.File;
+import java.io.IOException;
+/**
+ * Ejemplo de uso de ProcessBuilder y Process para comunicación
+ * entre procesos a través de parámetros de la llamada
+ * @author Rafa
+ * @version 1.0
+ */
+public class PasaParam {
+
+	public static void main(String[] args) {
+		ProcessBuilder pb;
+		Process process;
+		int exitVal;
+		try {
+			pb = new ProcessBuilder();
+			pb.directory(new File("/home/usuario/git/ProgSerPro/ProgSerPro/bin"));
+			pb.command("java", "psp.temauno.actividades.DameParam", "Hola!");
+			process = pb.start();
+			
+			exitVal = process.waitFor();			
+			System.out.println("Llamada con un parámetro: " + exitVal);
+			
+			pb.command("java", "psp.temauno.actividades.DameParam");
+			process = pb.start();			
+			exitVal = process.waitFor();			
+			System.out.println("Llamada sin parámetros: " + exitVal);			
+		} catch (IOException | InterruptedException e) {			
+			e.printStackTrace();
+		}
+	}
+
+}

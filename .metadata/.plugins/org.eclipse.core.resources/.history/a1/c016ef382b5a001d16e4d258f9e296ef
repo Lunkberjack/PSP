@@ -1,0 +1,25 @@
+package main.act1_20;
+
+public class MediaAritmetica extends TiempoEjecucion implements Runnable {
+	Alumno[] alumnos;
+	double media;
+	
+	public MediaAritmetica(Alumno[] alumnos) {
+		this.alumnos = alumnos;
+	}
+	
+	@Override
+	public void run() {
+		this.setTiempoComienzo(System.currentTimeMillis());
+		
+		double res = 0;
+		for(Alumno x:alumnos) {
+			res += x.getEdad();
+		}
+		this.media = res / this.alumnos.length;
+	}
+
+	public double getMedia() {
+		return media;
+	}
+}

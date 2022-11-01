@@ -1,0 +1,16 @@
+package main.act1_20;
+
+public class MediaAritmetica implements Runnable {
+	private double media(Alumno[] alumnos) {
+		double res = 0;
+		for(Alumno x:alumnos) {
+			res += x.getEdad();
+		}
+		return res/alumnos.length;
+	}
+	
+	@Override
+	public void run() {
+		
+	}
+}
