@@ -1,0 +1,23 @@
+package main.act2_5;
+
+/**
+ * Clase que espera hasta que el productor ha puesto un 
+ * objeto en el mostrador para cogerlo y mostrar tanto
+ * el nombre del hilo que lo ha cogido como el valor del 
+ * objeto recibido.
+ * 
+ * @author LuciaLM
+ */
+public class Consumidor extends Thread {
+
+    private Mostrador mostrador;
+
+    public Consumidor(Mostrador mostrador) {
+        this.mostrador = mostrador;
+    }
+
+    @Override
+    public void run() {
+    	mostrador.coger();
+    }
+}

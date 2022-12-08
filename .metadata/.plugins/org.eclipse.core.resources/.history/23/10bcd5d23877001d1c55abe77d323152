@@ -1,0 +1,25 @@
+package main.act2_5;
+
+public class Consumidor extends Thread {
+
+    private Mostrador mostrador;
+
+    public Consumidor(Mostrador mostrador) {
+        this.mostrador = mostrador;
+    }
+
+    @Override
+    public void run() {
+        try {
+        	// Lo hace en un loop infinito.
+            while (true) {
+                String datos = mostrador.coger();
+                System.out.println("Consumido por el hilo: " + Thread.currentThread().getName() +
+                		", objeto nombre: " + datos);
+                Thread.sleep(500);
+            }
+        } catch (Exception e) {
+        	e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,42 @@
+package main.act2_4;
+
+public class Main {
+	public static void main(String[] args) {
+		Cuenta c = new Cuenta(40);
+		SacarDinero h1 = new SacarDinero("Ana", c);
+		SacarDinero h2 = new SacarDinero("Juan", c);
+
+		h1.start();
+		h2.start();
+
+		h1.join();
+		h2.join();
+	}
+}
+
+public class Sumar {
+	private static int contador;
+	public Cuenta (int s) {
+		saldo = s;
+	}
+
+	public int getSaldo() {
+		return saldo;
+	}
+	public synchronized void sumar(int cantidad){
+		saldo=saldo-cantidad;
+	}
+}
+
+public class SacarDinero extends Thread {
+	private Cuenta c;    
+	public SacarDinero(String n, Cuenta c) {        
+		super(n);
+		this.c = c;
+	}
+	public  void run() {        
+		for (int x = 1; x<= 4; x++) {        
+			c.retirarDinero(10, getName());            
+		}        
+	}
+}

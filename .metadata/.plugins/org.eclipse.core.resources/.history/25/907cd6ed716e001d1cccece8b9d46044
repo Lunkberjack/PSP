@@ -1,0 +1,11 @@
+package main.act2_4;
+
+public class Hilo extends Thread {
+	private Main m;    
+	public SacarDinero(Main m) {        
+		this.m = m;
+	}
+	public  void run() {
+		m.aumentarContador();
+	}
+}

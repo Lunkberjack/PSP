@@ -1,0 +1,17 @@
+package main.act2_5;
+
+public class Mostrador {
+	private String objeto;
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	public synchronized String poner(String objeto) {
+		return this.objeto;
+	}
+	
+	public synchronized String coger() {
+		return this.objeto;
+	}
+}

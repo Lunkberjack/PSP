@@ -1,0 +1,20 @@
+package main.act2_2;
+
+import java.util.Random;
+
+public class Jugador extends Thread {
+	private String nombre;
+	private Random rnd;
+	private int dado1, dado2, total;
+	
+	Jugador(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	@Override
+	public void run() {
+		this.dado1 = this.rnd.nextInt(6)+1;
+		this.dado2 = this.rnd.nextInt(6)+1;
+		this.total = this.dado1 + this.dado2;
+	}
+}

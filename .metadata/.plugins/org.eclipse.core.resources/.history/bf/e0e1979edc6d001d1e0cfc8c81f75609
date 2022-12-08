@@ -1,0 +1,11 @@
+package main.act2_4;
+
+public class Hilo implements Runnable {
+	private Main main = new Main();
+	
+	@Override
+	public void run() {
+		main.aumentarCont();
+	}
+
+}

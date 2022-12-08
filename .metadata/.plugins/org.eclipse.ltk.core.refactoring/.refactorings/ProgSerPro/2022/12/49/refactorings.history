@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;psp.temados.act2_5&apos; to &apos;JavaProcesos/src&apos;&#x0A;- Original project: &apos;ProgSerPro&apos;&#x0A;- Destination element: &apos;JavaProcesos/src&apos;&#x0A;- Original element: &apos;ProgSerPro/src/psp.temados.act2_5&apos;&#x0A;- Update references to refactored element" description="Move package" destination="=JavaProcesos/src" element1="/src&lt;psp.temados.act2_5" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1670530789249" version="1.0"/>
+</session>

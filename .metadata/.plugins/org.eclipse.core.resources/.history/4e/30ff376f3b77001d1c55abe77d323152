@@ -1,0 +1,28 @@
+package main.act2_5;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+/**
+ * Clase que pone un objeto en el mostrador para cogerlo 
+ * y espera hasta que el Consumidor lo coja para poner otro.
+ * 
+ * @author LuciaLM
+ */
+public class Productor extends Thread {
+
+    private static final int MAX_SIZE = 3;
+    private final List<String> messages = new ArrayList<>();
+
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                producir();
+            }
+        } catch (Exception exp) {
+        }
+    }
+
+
+}

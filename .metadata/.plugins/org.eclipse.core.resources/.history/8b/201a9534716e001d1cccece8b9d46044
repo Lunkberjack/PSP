@@ -1,0 +1,17 @@
+package main.act2_4;
+
+public class Main {
+	private int contador = 0;
+	
+	public static void main(String[] args) {
+		Hilo h1 = new Hilo();
+		
+	}
+	
+	public synchronized void aumentarCont() {
+		while(contador < 5000) {
+			contador++;
+			System.out.println(contador);
+		}
+	}
+}

@@ -1,0 +1,32 @@
+package main.act2_1;
+/**
+ * Uso de join(long millis) para que el hilo espere un tiempo 
+ * proporcional a su id antes de ejecutarse (si el hilo por el 
+ * que está esperando no ha terminado su ejecución).
+ * 
+ * @author LuciaLM
+ * @version 1.0
+ */
+public class Main {
+	public static void main(String[] args) {
+		Hilo hilo = new Hilo();
+		Hilo hilo2 = new Hilo();
+		Hilo hilo3 = new Hilo();
+		
+		Thread th1 = new Thread(hilo);
+		Thread th2 =new Thread(hilo2);
+		Thread th3 =new Thread(hilo3);
+		
+		try {
+			th1.start();
+			Thread.sleep(Thread.currentThread().getId()*10000);
+			th2.start();
+			Thread.sleep(Thread.currentThread().getId()*10000);
+			th3.start();
+			Thread.sleep(Thread.currentThread().getId()*10000);
+			
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+}

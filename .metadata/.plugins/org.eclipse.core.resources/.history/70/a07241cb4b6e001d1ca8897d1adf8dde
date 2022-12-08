@@ -1,0 +1,10 @@
+package main.act2_1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		new Thread(new Hilo()).start();
+		new Thread(new Hilo()).start();
+		new Thread(new Hilo()).start();
+	}
+}

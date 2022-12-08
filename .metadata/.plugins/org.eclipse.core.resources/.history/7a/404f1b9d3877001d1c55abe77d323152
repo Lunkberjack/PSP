@@ -1,0 +1,22 @@
+package main.act2_5;
+
+public class Consumidor extends Thread {
+
+    private Producer producer;
+
+    public Consumidor(Producer producer) {
+        this.producer = producer;
+    }
+
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                String data = producer.consume();
+                System.out.println("Consumed by: " + Thread.currentThread().getName() + " data: " + data);
+                Thread.sleep(500);
+            }
+        } catch (Exception exp) {
+        }
+    }
+}

@@ -1,0 +1,14 @@
+package main.act2_1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Hilo hilo = new Hilo();
+		Hilo hilo2 = new Hilo();
+		Hilo hilo3 = new Hilo();
+		
+		Thread th1 = new Thread(hilo);
+		Thread th2 =new Thread(hilo2);
+		Thread th3 =new Thread(hilo3);
+	}
+}

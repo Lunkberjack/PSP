@@ -1,0 +1,28 @@
+package main.act2_4;
+
+public class Main {
+	public static void main(String[] args) {
+		int contador = 0;
+		Main main = new Main();
+		
+		Thread h1 = new Thread();
+		h1.start();
+		Thread h2 = new Thread();
+		h2.start();
+		Thread h3 = new Thread();
+		h3.start();
+		Thread h4 = new Thread();
+		h4.start();
+		Thread h5 = new Thread();
+		h5.start();
+		
+		main.aumentarCont(contador);
+	}
+	
+	public synchronized void aumentarCont(int cont) {
+		while(cont < 5000) {
+			cont++;
+			System.out.println(cont);
+		}
+	}
+}

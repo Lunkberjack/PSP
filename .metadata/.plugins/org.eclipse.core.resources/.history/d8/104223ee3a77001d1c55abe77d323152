@@ -1,0 +1,29 @@
+package main.act2_5;
+
+import java.time.LocalDateTime;
+import java.util.Random;
+
+public class Mostrador {
+	private Random rnd;
+	private int dato;
+	
+	Mostrador() {
+		this.rnd = new Random();
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+    private synchronized void producir() {
+    	this.dato = rnd.nextInt(15) + 1;
+        notify();
+    }
+
+    public synchronized void coger() {
+        notify();
+        String data = messages.get(0);
+        messages.remove(data);
+        return data;
+    }
+}

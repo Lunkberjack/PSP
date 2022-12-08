@@ -1,6 +1,0 @@
-package main.act1_20;
-
-public class Alumno {
-	private int id;
-	private int edad;
-}

@@ -1,0 +1,33 @@
+package main.act2_5;
+
+import java.time.LocalDateTime;
+import java.util.Random;
+
+public class Mostrador {
+	private Random rnd;
+	private int dato;
+	
+	Mostrador() {
+		this.rnd = new Random();
+	}
+	
+	public static void main(String[] args) {
+		Mostrador m = new Mostrador();
+		Productor p = new Productor(m);
+		Consumidor c = new Consumidor(m);
+	}
+
+    public synchronized void producir() throws InterruptedException {
+    	this.dato = rnd.nextInt(15) + 1;
+    	System.out.println("Creado dato " + dato);
+        notify(); // Informa de que ha generado el dato, y espera
+        wait(); // Cuando el Consumidor recoja el dato creará otro, no antes
+    }
+
+    public synchronized void coger() throws InterruptedException {
+        notify(); // Informa de que ha cogido el dato
+        System.out.println("Consumido por el hilo: " + Thread.currentThread().getName() +
+        		", objeto número: " + this.dato);
+        wait(); // Espera hasta que el Productor genere el dato e informe
+    }
+}

@@ -1,0 +1,8 @@
+package main.act2_2;
+
+public class Main {
+	@Override
+	public void run() {
+		
+	}
+}
